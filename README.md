@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # alarme_me
 
 A new Flutter project.
@@ -14,3 +15,6 @@ A few resources to get you started if this is your first Flutter project:
 For help getting started with Flutter development, view the
 [online documentation](https://docs.flutter.dev/), which offers tutorials,
 samples, guidance on mobile development, and a full API reference.
+=======
+# e-commerce
+>>>>>>> 560803e32f9a9d3bc10fa87f9063d0d2b0da0244
