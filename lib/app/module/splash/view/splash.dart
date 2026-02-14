@@ -29,7 +29,7 @@ class _SplashState extends State<Splash> {
 
           child: Column(
             children: [
-              Image.asset("assets/images/logo.avif", scale: 3),
+              Image.asset("assets/images/images.jpg", scale: 3),
               TextComponent(txt: "MainMode", txtSize: 30, fw: FontWeight.bold),
               TextComponent(txt: "Fashion House", txtSize: 20),
             ],
