@@ -2,12 +2,18 @@ import 'package:alarme_me/app/components/button_component.dart';
 import 'package:alarme_me/app/components/text_component.dart';
 import 'package:alarme_me/app/module/connexion/view/connexion.dart';
 import 'package:alarme_me/app/module/login/view/login.dart';
+import 'package:alarme_me/app/module/product/view/product.dart';
 import 'package:alarme_me/utils/colors.dart';
 import 'package:flutter/material.dart';
 
-class Home extends StatelessWidget {
+class Home extends StatefulWidget {
   const Home({super.key});
 
+  @override
+  State<Home> createState() => _HomeState();
+}
+
+class _HomeState extends State<Home> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -29,16 +35,26 @@ class Home extends StatelessWidget {
             SizedBox(height: 10),
 
             InkWell(
-              onTap: (){
-                Navigator.push(context, MaterialPageRoute(builder: (context) => Connexion()));
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => Connexion()),
+                );
               },
-              child: ButtonComponent(txtButton: "Sign up", button_color: mainColor)),
+              child: ButtonComponent(
+                txtButton: "Sign up",
+                button_color: mainColor,
+              ),
+            ),
 
             SizedBox(height: 15),
 
             InkWell(
               onTap: () {
-                Navigator.push(context, MaterialPageRoute(builder: (context) => Login()));
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => Login()),
+                );
               },
               child: ButtonComponent(
                 txtButton: "Login",
@@ -48,12 +64,20 @@ class Home extends StatelessWidget {
 
             SizedBox(height: 35),
 
-            TextComponent(txt: "Not thanks"),
+            InkWell(
+              onTap: () {
+                Navigator.pushAndRemoveUntil(
+                  context,
+                  MaterialPageRoute(builder: (context) => Product()),
+                  (route) => false,
+                );
+              },
+
+              child: TextComponent(txt: "Not thanks"),
+            ),
           ],
         ),
       ),
     );
   }
 }
-
- 

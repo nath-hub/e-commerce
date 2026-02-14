@@ -8,7 +8,9 @@ import 'package:alarme_me/utils/colors.dart';
 import 'package:flutter/material.dart';
 
 class ProductDetail extends StatefulWidget {
-  const ProductDetail({super.key});
+  final String img;
+
+  ProductDetail({required this.img});
 
   @override
   State<ProductDetail> createState() => _ProductDetailState();
@@ -71,7 +73,7 @@ class _ProductDetailState extends State<ProductDetail> {
               height: 300,
               width: MediaQuery.of(context).size.width,
               decoration: BoxDecoration(
-                color: greyColor2,
+                image: DecorationImage(image: AssetImage(widget.img), fit: BoxFit.cover),
                 borderRadius: BorderRadius.circular(20),
               ),
             ),
@@ -325,7 +327,7 @@ class _ProductDetailState extends State<ProductDetail> {
                 children: List.generate(2, (index) {
                   return Container(
                     width: (MediaQuery.of(context).size.width / 2) - 20,
-                    child: productBox("Panjabi", "13 Reviews", "Tk 500","Tk 1900", "", context),
+                    child: productBox("Panjabi", "13 Reviews", "Tk 500","Tk 1900",  "assets/images/wh1.jpg", context),
                   );
                 }),
               ),

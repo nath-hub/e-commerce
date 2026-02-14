@@ -40,7 +40,7 @@ class _CategoryDetailState extends State<CategoryDetail> {
                 children: List.generate(6, (index) {
                   return Container(
                     width: (MediaQuery.of(context).size.width / 2) - 20,
-                    child: productBox("Panjabi", "13 Reviews", "Tk 500","Tk 1900", "", context),
+                    child: productBox("Panjabi", "13 Reviews", "Tk 500","Tk 1900",  "assets/images/wh1.jpg", context),
                   );
                 }),
               ),

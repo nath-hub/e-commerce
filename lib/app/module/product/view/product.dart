@@ -15,6 +15,48 @@ class Product extends StatefulWidget {
 }
 
 class _ProductState extends State<Product> {
+
+List<String> ProductName = [
+ "T-shirt Classic", "T-shirt V-Neck", "T-shirt Oversize", "T-shirt Sport", "T-shirt Polo", 
+ "T-shirt Graphic", "T-shirt Slim", "T-shirt Cotton", "T-shirt Summer",
+  // 3 Pantalons (Jeans)
+  "Jeans Blue", "Jeans Black", "Pantalon Chino",
+  // 6 Montres
+  "Watch Silver", "Watch Sport", "Watch Gold", "Watch Smart", "Watch Leather", "Watch Minimalist",
+  // 4 Chaussures
+  "Running Shoes", "Casual Sneakers", "Leather Boots", "Sport Shoes",
+  // 1 Accessoire
+  "Accessoire Mode",
+  // 5 Divers pour compléter à 28
+  "Blouse Médicale", "Short Cargo", "Veste Légère", "Sweat Hoodie",
+    // 5 Divers (Ajoutés pour arriver à 28)
+  "Blouse Médicale", "Short Cargo", "Veste Légère", "Sweat Hoodie", "Ceinture Cuir"
+];
+
+
+List<String> ProductImg = [
+  // T-shirts
+  "assets/images/tsh1.jpg", "assets/images/tsh2.jpg", "assets/images/tsh3.jpg", "assets/images/tsh4.jpg", 
+  "assets/images/tsh5.jpg", "assets/images/tsh6.jpg", "assets/images/tsh7.jpg", "assets/images/tsh8.jpg", 
+  "assets/images/tsh9.jpg",
+  // Jeans
+  "assets/images/jean.jpg", "assets/images/jean1.jpg", "assets/images/jean2.jpg", "assets/images/jean3.jpg", 
+  "assets/images/jean5.jpg", "assets/images/jean4.jpg", "assets/images/jean6.jpg",
+  // Montres
+  "assets/images/wath.jpg", "assets/images/wh1.jpg", "assets/images/wh2.jpg", "assets/images/wh3.jpg",
+   "assets/images/wh4.jpg", "assets/images/wh5.jpg",
+  // Chaussures
+  "assets/images/shoe1.jpg", "assets/images/shoe2.jpg", "assets/images/shoe.jpg", "assets/images/shoe4.jpg",
+  // Accessoire
+  "assets/images/acc.jpg", 
+   "assets/images/jean5.jpg", "assets/images/jean4.jpg", "assets/images/jean6.jpg", "assets/images/tsh1.jpg", "assets/images/acc.jpg"
+
+];
+
+List<String> get productReviews => List.generate( ProductName.length, (i) => "${(i + 5) * 2} Reviews");
+List<String> get productPromoPrice => List.generate(ProductName.length, (i) => "Tk ${500 + (i * 50)}");
+List<String> get productNormalPrice => List.generate(ProductName.length, (i) => "Tk ${1200 + (i * 100)}");
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -206,10 +248,10 @@ class _ProductState extends State<Product> {
               Wrap(
                 spacing: 8,
                 runSpacing: 8,
-                children: List.generate(6, (index) {
+                children: List.generate(ProductName.length - 1, (index) {
                   return Container(
                     width: (MediaQuery.of(context).size.width / 2) - 20,
-                    child: productBox("Panjabi", "13 Reviews", "Tk 500","Tk 1900", "", context),
+                    child: productBox(ProductName[index], productReviews[index], productPromoPrice[index], productNormalPrice[index], ProductImg[index], context,),
                   );
                 }),
               ),

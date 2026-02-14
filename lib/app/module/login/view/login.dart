@@ -143,7 +143,7 @@ class _LoginState extends State<Login> {
                   SizedBox(width: 20),
                   Expanded(
                     child: Container(
-                      child: Center(child: TextComponent(txt: "Google")),
+                      child: Center(child: TextComponent(txt: "Facebook")),
                       height: 60,
                       decoration: BoxDecoration(
                         border: Border.all(color: mainColor),

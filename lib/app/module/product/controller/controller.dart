@@ -42,14 +42,14 @@ productBox(
   productReview,
   pricePromo,
   priceNormal,
-  image,
+  String image,
   BuildContext context,
 ) {
   return InkWell(
     onTap: () {
       Navigator.push(
         context,
-        MaterialPageRoute(builder: (context) => ProductDetail()),
+        MaterialPageRoute(builder: (context) => ProductDetail(img: image,)),
       );
     },
 
@@ -57,11 +57,16 @@ productBox(
       color: Colors.white,
       child: Container(
         height: 350,
+
         child: Column(
           children: [
             Container(
               height: 180,
               decoration: BoxDecoration(
+                image: DecorationImage(
+                  image: AssetImage(image),
+                  fit: BoxFit.cover,
+                ),
                 color: greyColor,
                 borderRadius: BorderRadius.only(
                   topLeft: Radius.circular(20),

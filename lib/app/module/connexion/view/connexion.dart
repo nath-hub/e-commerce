@@ -107,7 +107,7 @@ TextEditingController password = TextEditingController();
                    Expanded(
                     child: Container(
                       child: Center(
-                        child: TextComponent(txt: "Google"),
+                        child: TextComponent(txt: "Facebook"),
                       ),
                       height: 60,
                       decoration: BoxDecoration(
